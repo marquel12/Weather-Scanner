@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 // TODO: Serve static files of entire client dist folder
 app.use(express.static('../client/dist'));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json()); //parse incoming request with JSON payloads
 
 // TODO: Implement middleware for parsing JSON and urlencoded form data
 

@@ -40,7 +40,7 @@ const fetchWeather = async (cityName: string) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ cityName }),
+    body: JSON.stringify({ cityName }), 
   });
 
   const weatherData = await response.json();

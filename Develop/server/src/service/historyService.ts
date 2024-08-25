@@ -1,11 +1,11 @@
 // TODO: Define a City class with name and id properties
-// class City {
-//   name:string
-//   id:number
-// }
+class City {
+  name:string
+  id:number
+}
 
 // TODO: Complete the HistoryService class
-class HistoryService {
+class HistoryService {  
   
 
 
