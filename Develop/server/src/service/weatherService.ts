@@ -12,7 +12,6 @@ interface Coordinates { // what this is telling me is that I will get back an ob
 
 // TODO: Define a class for the Weather object. This class will show the properties of the weather object that will be returned from the api and will be used to display the weather data on the client side
 class Weather {
-
   name: string;
   date: string;
   tempF: number;
@@ -20,6 +19,7 @@ class Weather {
   humidity: number;
   icon: string;
   iconDescription: string;
+
 
 
   constructor(name: string, date: string,tempF: number, windSpeed: number, humidity: number, icon: string, iconDescription: string) {
@@ -44,13 +44,14 @@ class WeatherService {
 constructor() {
   this.baseURL = process.env.WEATHER_API_BASE_URL || '';
   this.apiKey = process.env.API_KEY || '';
+  this.cityName = '';
   
 }
 
 }
   
   // TODO: Create fetchLocationData method
-  private async fetchLocationData(query: string) {  // THIS WILL CALL THE API COORDINATES
+  // private async fetchLocationData(query: string)  // THIS WILL CALL THE API COORDINATES
  
 
   
@@ -72,4 +73,4 @@ constructor() {
 //   async getWeatherForCity(city: string) {}
 // }
 
-// export default new WeatherService();
+export default new WeatherService();
