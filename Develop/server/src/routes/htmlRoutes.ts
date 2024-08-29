@@ -8,6 +8,8 @@ console.log(__dirname);
 // TODO: Define route to serve index.html
 router.get('*',(_req:Request,res:Response) => { // THE * IS A WILDCARD THAT MATCHES EVERYTHING THAT IS NOT MATCHED BY THE OTHER ROUTES
     res.sendFile(path.join(__dirname,'../../../client/dist/index.html'));
+
+    
 }
     )
 export default router;
