@@ -8,10 +8,16 @@ const router = Router();
 
 // TODO: POST Request with city name to retrieve weather data
 
+
 router.post('/', async (req: Request, res: Response) => {
   try {
     // Get cityName from request body
-    const cityName = req.body;
+    const {cityName} = req.body;
+
+    // // Validate that cityName is provided
+    // if (!cityName) {
+    //   return res.status(400).json({ msg: 'City name is required' });
+    // }
 
     // Fetch weather data using WeatherService
     const weatherData = await WeatherService.getWeatherForCity(cityName);
