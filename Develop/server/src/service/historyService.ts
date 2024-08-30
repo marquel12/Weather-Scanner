@@ -15,15 +15,7 @@ class City {
 
 // TODO: Complete the HistoryService class
 class HistoryService{  
-
-
-  
-
-
-
-
-
-  // TODO: Define a read method that reads from the searchHistory.json file
+// TODO: Define a read method that reads from the searchHistory.json file
   private async read() {
     return await fs.readFile('searchHistory.json',{
       flag: 'a+',

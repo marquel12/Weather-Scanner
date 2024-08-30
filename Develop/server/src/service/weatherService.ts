@@ -49,7 +49,7 @@ class WeatherService {
   constructor() {
     this.baseURL = process.env.API_BASE_URL || '';
 
-    this.apiKey = process.env.API_KEY || '';
+    this.apiKey = process.env.API_KEY as string;
   }
 
 
@@ -135,6 +135,7 @@ class WeatherService {
 //   // TODO: Complete getWeatherForCity method
   async getWeatherForCity(city: string) {
     this.cityName = city;
+  
     const locationData = await this.fetchAndDestructureLocationData();
     console.log(locationData)
     

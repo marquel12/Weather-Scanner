@@ -12,24 +12,20 @@ const router = Router();
 router.post('/', async (req: Request, res: Response) => {
   try {
     // Get cityName from request body
-    const {cityName} = req.body;
-
-    // // Validate that cityName is provided
-    // if (!cityName) {
-    //   return res.status(400).json({ msg: 'City name is required' });
-    // }
-
+    const { cityName } = req.body;
     // Fetch weather data using WeatherService
     const weatherData = await WeatherService.getWeatherForCity(cityName);
+
+    res.json(weatherData);
+    console.log('Weather successfully retrieved for city:', cityName);
+    console.log('===============================================');
+
 
     // Save city to search history
     await HistoryService.addCity(cityName);
 
     // Send the weather data back to the client
-    res.json(weatherData);
-    console.log('Weather successfully retrieved for city:', cityName);
-    console.log('===============================================');
-
+  
   } catch (error) {
     console.error('Error retrieving weather:', error);
     res.status(500).json({ msg: 'An error occurred', }); // Improved error message
