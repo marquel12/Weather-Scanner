@@ -16,7 +16,7 @@ router.post('/', async (req: Request, res: Response) => {
     // Fetch weather data using WeatherService
     const weatherData = await WeatherService.getWeatherForCity(cityName);
 
-    res.json(weatherData);
+    
     console.log('Weather successfully retrieved for city:', cityName);
     console.log('===============================================');
 
@@ -25,7 +25,7 @@ router.post('/', async (req: Request, res: Response) => {
     await HistoryService.addCity(cityName);
 
     // Send the weather data back to the client
-  
+    res.json(weatherData);
   } catch (error) {
     console.error('Error retrieving weather:', error);
     res.status(500).json({ msg: 'An error occurred', }); // Improved error message
