@@ -132,11 +132,21 @@ class WeatherService {
   }
   // //   // TODO: Complete buildForecastArray method
   private buildForecastArray(currentWeather: Weather, weatherData: any[]) {
-    return weatherData.map((weather) => {
+    const uniqueDates: string [] =[];
+    return weatherData
+    .filter((weather) => { const date = new Date(weather.dt_txt).toLocaleDateString();
+
+    if(uniqueDates.includes(date)){
+      return false;
+    }
+    uniqueDates.push(date); 
+    return true;})
+    
+    .map((weather) => {
       // console.log(weather)
       const name = weather.weather[0].description;
-      const date = new Date(weather.dt_txt).toLocaleDateString();
-    // console.log()
+      const date = new Date(weather.dt_txt).toLocaleDateString() // this is the date that the forecast is for 
+    console.log( date)  
     const tempF = weather.main.temp;
     const windSpeed = weather.wind.speed;
     const humidity = weather.main.humidity;
@@ -159,10 +169,11 @@ class WeatherService {
     // console.log(weatherData.list)
     const currentWeather = this.parseCurrentWeather(weatherData.list);
     // console.log(currentWeather)
-    const forecast = this.buildForecastArray(currentWeather, weatherData.list);
+    let forecast = this.buildForecastArray(currentWeather, weatherData.list);
     // console.log(forecast)
-    return [currentWeather, ...forecast
-    ];
+    forecast = forecast.slice(0, 5);
+    return [currentWeather, ...forecast // this is the spread operator that will take the currentWeather object and spread it out into the array
+];
 
 
 
