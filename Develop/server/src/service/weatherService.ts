@@ -122,7 +122,7 @@ class WeatherService {
     // console.log(response)
     console.log('parseCurrentWeather')
     const name = response.name;
-    console.log(response[0])
+    // console.log(response[0])
     const tempF = response[0].main.temp;
     const windSpeed = response[0].wind.speed;
     const humidity = response[0].main.humidity;
