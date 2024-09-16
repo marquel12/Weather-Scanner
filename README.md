@@ -52,4 +52,4 @@
 
   
   ## Questions
-  If you have any questions about this repo, please contact me directly at marqueljamal12@gmail.com. You can find more of my work on github at [Marquel12](https://github.com/marquel12/Readme-Generator-) 
+  If you have any questions about this repo, please contact me directly at marqueljamal12@gmail.com. You can find more of my work on github at [Marquel12](https://github.com/marquel12/Weather-Scanner?tab=readme-ov-file) 
